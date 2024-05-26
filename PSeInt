@@ -1,0 +1,79 @@
+ESTUDIANTES
+
+Algoritmo Estudiante	
+	// Entrada
+	Escribir "Nota Materia 1"
+	Leer nota1
+	Escribir "Nota Materia 2"
+	Leer nota2
+	Escribir "Nota Materia 3"
+	Leer nota3
+	Escribir "Nota Materia 4"
+	Leer nota4
+	Escribir "Nota Materia 5"
+	Leer nota5
+	
+	// Calculos
+	
+	sumaTotalNotas = nota1 + nota2 + nota3 + nota4 + nota5
+	Escribir "Suma de Notas: ", sumaTotalNotas
+	
+	CantidadNotas = 5
+	Escribir "Cantidad Notas: ", CantidadNotas
+	
+	Promedio = sumaTotalNotas/CantidadNotas
+	
+	//Resultado
+	Escribir "El promedio es: ", Promedio
+FinAlgoritmo
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PARTIDOS FUTBOL
+
+Algoritmo PuntosEquipoFutbol
+	// Datos de entrada
+	Escribir "Ingrese la cantidad de partidos ganados del equipo"
+	Leer PartidosGanados
+		
+	Escribir "Ingrese la cantidad de partidos empatados del equipo"
+	Leer PartidosEmpatados
+		
+	Escribir "Ingrese la cantidad de partidos perdidos del equipo"
+	Leer PartidosPerdidos
+		
+	// Cálculos necesarios para llegar al resultado
+	PuntosEquipo = (PartidosGanados * 3) + (PartidosEmpatados * 1) + (PartidosPerdidos * 0)
+		
+	// Resultado
+	Escribir "El equipo tiene ", puntosEquipo, " puntos hasta el momento, luego de jugar ", partidosGanados + partidosEmpatados + partidosPerdidos, " partidos"
+		
+FinAlgoritmo
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PINTOR
+
+Algoritmo Pintor
+    // Datos de entrada
+    Escribir "Ingrese el alto de la pared"
+    Leer AltoPared
+    
+    Escribir "Ingrese el ancho de la pared"
+    Leer AnchoPared
+    
+    Escribir "Ingrese el costo del metro cuadrado que cobra el pintor"
+    Leer CostoPintorPorMetro2
+    
+    // Cálculos necesarios para lograr el resultado
+    superficiePared = AltoPared * AnchoPared
+    
+    // Mostrar Detalles de Entrada
+    Escribir "El galpón tiene un ancho de ", AnchoPared, " Metros y un Alto de ", AltoPared, " Metros"
+    Escribir "El galpon tiene la superficie de ", SuperficiePared, " Metros Cuadrados"
+    
+    // Resultado
+    CostoManoObra = SuperficiePared * CostoPintorPorMetro2
+    Escribir "Lo que debera abonar al pintor sera un total de: ", costoManoObra
+    
+FinAlgoritmo
