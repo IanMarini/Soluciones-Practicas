@@ -1,0 +1,263 @@
+DESPENSA
+
+def calcular_costo_leche(unidades, es_jubilado):
+    # Precio unitario de la leche
+    precio_unitario = 1000
+    
+    # Calcular el costo sin descuentos
+    costo_total = unidades * precio_unitario
+    
+    # Calcular el descuento según la cantidad de unidades
+    if unidades > 24:
+        descuento = 0.15
+    elif unidades > 12:
+        descuento = 0.10
+    else:
+        descuento = 0.0
+    
+    # Aplicar el descuento por jubilado si es aplicable
+    if es_jubilado:
+        descuento += 0.10
+    
+    # Calcular el costo final con el descuento aplicado
+    descuento_total = costo_total * descuento
+    costo_final = costo_total - descuento_total
+    
+    return costo_final
+
+# Datos de entrada
+unidades = int(input("Ingrese la cantidad de unidades de leche compradas: "))
+es_jubilado = input("¿Es jubilado? (sí/no): ").strip().lower() == 'sí'
+
+# Calcular el costo total
+costo_final = calcular_costo_leche(unidades, es_jubilado)
+
+# Mostrar el resultado
+print(f"El costo total a pagar es de {costo_final} pesos.")
+
+IVA
+
+def calcular_precio_final(precio, iva):
+    # Calcular el valor del IVA
+    valor_iva = precio * iva / 100
+    # Calcular el precio final
+    precio_final = precio + valor_iva
+    return precio_final
+
+# Solicitar al usuario el precio del producto
+precio = float(input("Ingrese el precio del producto: "))
+
+# Definir el IVA
+iva = 21
+
+# Calcular el precio final
+precio_final = calcular_precio_final(precio, iva)
+
+# Mostrar el precio final
+print(f"El precio de lista con IVA incluido es: ${precio_final:.2f}")
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ESTRUCTURA SECUENCIAL
+
+1.Promedio de notas
+def calcular_promedio(nota1, nota2, nota3, nota4, nota5):
+    return (nota1 + nota2 + nota3 + nota4 + nota5) / 5
+
+nota1 = float(input("Ingrese la nota de la materia 1: "))
+nota2 = float(input("Ingrese la nota de la materia 2: "))
+nota3 = float(input("Ingrese la nota de la materia 3: "))
+nota4 = float(input("Ingrese la nota de la materia 4: "))
+nota5 = float(input("Ingrese la nota de la materia 5: "))
+
+promedio = calcular_promedio(nota1, nota2, nota3, nota4, nota5)
+
+print(f"El promedio es: {promedio:.2f}")
+
+2.Presupuesto para pintar
+def calcular_costo_total(metros_cuadrados, costo_metro):
+    return metros_cuadrados * costo_metro
+
+metros_cuadrados = float(input("Ingrese los metros cuadrados a pintar: "))
+costo_metro = float(input("Ingrese el costo por metro cuadrado: "))
+
+costo_total = calcular_costo_total(metros_cuadrados, costo_metro)
+
+print(f"El costo total de la mano de obra es: ${costo_total:.2f}")
+
+3.Puntos en el campeonato
+def calcular_puntos(ganados, empatados, perdidos):
+    return ganados * 3 + empatados * 1 + perdidos * 0
+
+ganados = int(input("Ingrese la cantidad de partidos ganados: "))
+empatados = int(input("Ingrese la cantidad de partidos empatados: "))
+perdidos = int(input("Ingrese la cantidad de partidos perdidos: "))
+
+total_puntos = calcular_puntos(ganados, empatados, perdidos)
+
+print(f"El total de puntos es: {total_puntos}")
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ESTRUCTURA CONDICIONAL
+
+Ejercicio 1
+numero = int(input("Ingrese un número: "))
+if numero > 0:
+    print("El número es positivo")
+
+Ejercicio 2
+numero = int(input("Ingrese un número: "))
+if numero % 2 == 0:
+    print("El número es par")
+else:
+    print("El número es impar")
+
+Ejercicio 3
+edad = int(input("Ingrese su edad: "))
+if edad >= 18 and edad <= 65:
+    print("Usted está en edad laboral")
+
+Ejercicio 4
+dia = input("Ingrese un día de la semana: ").lower()
+if dia == "sábado" or dia == "domingo":
+    print("Es fin de semana")
+else:
+    print("Es un día laborable")
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ESTRUCTURA ITERATIVA.
+
+Ejercicio 1: Mostrar números del 0 al número ingresado.
+numero = int(input("Ingrese un número: "))
+for i in range(numero + 1):
+    print(i)
+
+Ejercicio 2: Mostrar números pares del 0 al número ingresado.
+numero = int(input("Ingrese un número: "))
+for i in range(numero + 1):
+    if i % 2 == 0:
+        print(i)
+
+Ejercicio 3: Ingresar nombres hasta que se ingrese "Fin"
+while True:
+    nombre = input("Ingrese un nombre (o 'fin' para terminar): ")
+    if nombre.lower() == "Fin":
+        break
+    print(nombre)
+
+Ejercicio 4: Calcular promedio de notas de un curso.
+total_notas = 0
+cantidad_estudiantes = int(input("Ingrese la cantidad de estudiantes: "))
+
+for i in range(cantidad_estudiantes):
+    nota = float(input(f"Ingrese la nota del estudiante {i+1}: "))
+    total_notas += nota
+
+promedio = total_notas / cantidad_estudiantes
+
+if promedio > 8:
+    rendimiento = "elevado"
+elif promedio >= 6:
+    rendimiento = "aceptable"
+else:
+    rendimiento = "bajo"
+
+print(f"El promedio es: {promedio:.2f}, el rendimiento ha sido {rendimiento}")
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ejercicio 5.1: Generar tabla de multiplicar usando while.
+numero = int(input("Ingrese un número (1-10): "))
+i = 1
+while i <= 10:
+    print(f"{numero} x {i} = {numero * i}")
+    i += 1
+
+Ejercicio 5.2: Generar tabla de multiplicar usando for.
+numero = int(input("Ingrese un número (1-10): "))
+for i in range(1, 11):
+    print(f"{numero} x {i} = {numero * i}")
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ESTRUCTURA DE DATOS.
+
+Ejercicio 1: Ingresar 10 nombres no repetidos.
+nombres = []
+while len(nombres) < 10:
+    nombre = input("Ingrese un nombre: ")
+    if nombre not in nombres:
+        nombres.append(nombre)
+    else:
+        print("El nombre ya está en la lista. Ingrese otro nombre.")
+print("Nombres ingresados:", nombres)
+
+Ejercicio 2: Eliminar tercer y último nombre, ordenar y mostrar la lista.
+# Continuación del ejercicio anterior
+if len(nombres) >= 3:
+    del nombres[2]
+if len(nombres) > 0:
+    del nombres[-1]
+
+nombres.sort()
+print("Lista ordenada:", nombres)
+
+Ejercicio 3: Guardar datos en un diccionario.
+persona = {
+    "nombre": input("Ingrese el nombre: "),
+    "apellido": input("Ingrese el apellido: "),
+    "dni": input("Ingrese el DNI: "),
+    "email": input("Ingrese el email: "),
+    "fecha_nacimiento": input("Ingrese la fecha de nacimiento (dd/mm/aaaa): ")
+}
+print("Datos de la persona:", persona)
+
+Ejercicio 4: Guardar datos de 4 personas en un diccionario.
+familia = {}
+for i in range(1, 5):
+    nombre = input(f"Ingrese el nombre de la persona {i}: ")
+    apellido = input(f"Ingrese el apellido de la persona {i}: ")
+    dni = input(f"Ingrese el DNI de la persona {i}: ")
+    email = input(f"Ingrese el email de la persona {i}: ")
+    fecha_nacimiento = input(f"Ingrese la fecha de nacimiento de la persona {i} (dd/mm/aaaa): ")
+    familia[f"persona_{i}"] = {
+        "nombre": nombre,
+        "apellido": apellido,
+        "dni": dni,
+        "email": email,
+        "fecha_nacimiento": fecha_nacimiento
+    }
+print("Datos de la familia:", familia)
+
+Ejercicio 5: Guardar primeros n números pares en una tupla.
+n = int(input("Ingrese la cantidad de números pares a guardar: "))
+numeros_pares = tuple(i for i in range(2 * n) if i % 2 == 0)
+print("Números pares:", numeros_pares)
+
+ACTIVIDAD 2 
+agenda = {}
+
+def agregar_persona():
+    dni = input("Ingrese el DNI: ")
+    if dni in agenda:
+        print("La persona ya está en la agenda.")
+    else:
+        nombre = input("Ingrese el nombre: ")
+        apellido = input("Ingrese el apellido: ")
+        email = input("Ingrese el email: ")
+        telefono = input("Ingrese el número de teléfono: ")
+        agenda[dni] = {
+            "nombre": nombre,
+            "apellido": apellido,
+            "email": email,
+            "telefono": telefono
+        }
+        print("Persona agregada.")
+
+def modificar_persona():
+    dni = input("Ingrese el DNI de la persona a modificar: ")
+    if dni in agenda:
+        print("Datos actuales:", agenda[dni])
+        nombre = input("
